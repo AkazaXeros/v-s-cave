@@ -1,4 +1,4 @@
-import { Grid, Spinner, Text } from '@chakra-ui/react';
+import { Spinner, Text } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import apiClient from '../../sources/apiClient.ts';
 
