@@ -13,6 +13,7 @@ export type Game = {
   name: string;
   slug: string;
   image: string;
+  metacritic: number;
   background_image: string;
   games_count: number;
   parent_platforms: { platform: Platform }[];
