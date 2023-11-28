@@ -7,7 +7,7 @@ export type Game = {
   name: 'string';
   slug: 'string';
   image: 'string';
-  image_background: 'string';
+  background_image: 'string';
   games_count: number;
 };
 
