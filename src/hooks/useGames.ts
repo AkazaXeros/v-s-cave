@@ -26,9 +26,10 @@ const useGames = (gameQuery: GameQuery) =>
         genres: gameQuery.genre?.id,
         platforms: gameQuery.platform?.id !== 2 ? gameQuery.platform?.id : null,
         ordering: gameQuery.sortOrder,
+        search: gameQuery.searchText,
       },
     },
-    [gameQuery.genre?.id, gameQuery.platform?.id, gameQuery.sortOrder]
+    [gameQuery]
   );
 
 export default useGames;
