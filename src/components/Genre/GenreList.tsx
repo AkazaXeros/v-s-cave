@@ -1,8 +1,8 @@
 import { Text } from '@chakra-ui/react';
 import useGenres from '../../hooks/useGenres';
 
-const GenreList = () => {
-  const { genres, isLoading, error } = useGenres();
+const GenresList = () => {
+  const { data: genres, isLoading, error } = useGenres();
 
   if (isLoading) return <p>Loading...</p>;
 
@@ -17,4 +17,4 @@ const GenreList = () => {
     </>
   );
 };
-export default GenreList;
+export default GenresList;
