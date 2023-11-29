@@ -1,6 +1,6 @@
 import { Grid, GridItem, HStack, Show } from '@chakra-ui/react';
 import NavBar from './components/UI/NavBar';
-import GameGrid from './components/GameUI/GameGrid';
+import GameGrid from './components/Game/GameGrid';
 import GenresList from './components/Genre/GenresList';
 import { Genre } from './hooks/useGenres';
 import { useState } from 'react';
