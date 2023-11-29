@@ -1,4 +1,5 @@
 import useData from './useData';
+import { Genre } from './useGenres';
 
 export type Platform = {
   id: number;
@@ -17,6 +18,9 @@ export type Game = {
   parent_platforms: { platform: Platform }[];
 };
 
-const useGames = () => useData<Game>('/games');
+const useGames = (selectedGenre: Genre | null) =>
+  useData<Game>('/games', { params: { genres: selectedGenre?.id } }, [
+    selectedGenre?.id,
+  ]);
 
 export default useGames;
