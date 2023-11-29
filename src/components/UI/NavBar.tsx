@@ -11,7 +11,7 @@ type Props = {
 const NavBar = ({ onSearchSubmit }: Props) => {
   return (
     <HStack padding="0.8rem">
-      <Image src={logo} boxSize="3.75rem" />
+      <Image src={logo} boxSize="3.75rem" alt="logo" />
       <SearchInput onSearchSubmit={onSearchSubmit} />
 
       <ColorModeSwitch />

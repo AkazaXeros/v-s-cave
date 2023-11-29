@@ -11,7 +11,7 @@ type Props = {
 const GameCard = ({ game }: Props) => {
   return (
     <Card borderRadius={10} overflow="hidden">
-      <Image src={getCroppedImageUrl(game.background_image)} />
+      <Image src={getCroppedImageUrl(game.background_image)} alt={game.name} />
       <CardBody>
         <HStack justifyContent="space-between" wrap="wrap" marginBottom={3}>
           <PlatformIconList platforms={game.parent_platforms} />
