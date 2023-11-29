@@ -2,6 +2,7 @@ import { HStack, Image, List, ListItem, Text } from '@chakra-ui/react';
 import useGenres, { Genre } from '../../hooks/useGenres';
 import getCroppedImageUrl from '../../utils/imageUrl';
 import GenresSkeleton from './GenreSkeleton';
+import { skeletons } from '../../utils/skeletonArray';
 
 type Props = {
   onGenreClick: (genre: Genre) => void;
@@ -10,7 +11,6 @@ type Props = {
 
 const GenresList = ({ onGenreClick, selectedGenre }: Props) => {
   const { data: genres, isLoading, error } = useGenres();
-  const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
   return (
     <>
