@@ -5,9 +5,10 @@ import GenresSkeleton from './GenreSkeleton';
 
 type Props = {
   onGenreClick: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 };
 
-const GenresList = ({ onGenreClick }: Props) => {
+const GenresList = ({ onGenreClick, selectedGenre }: Props) => {
   const { data: genres, isLoading, error } = useGenres();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -29,6 +30,7 @@ const GenresList = ({ onGenreClick }: Props) => {
                 fontSize="lg"
                 variant="link"
                 cursor="pointer"
+                fontWeight={selectedGenre?.id === genre.id ? 'bold' : 'normal'}
                 _hover={{ textDecoration: 'underline' }}
                 onClick={() => onGenreClick(genre)}
               >
