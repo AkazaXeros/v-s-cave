@@ -1,4 +1,4 @@
-import { HStack, Image, List, ListItem, Text } from '@chakra-ui/react';
+import { HStack, Heading, Image, List, ListItem, Text } from '@chakra-ui/react';
 import useGenres, { Genre } from '../../hooks/useGenres';
 import getCroppedImageUrl from '../../utils/imageUrl';
 import GenresSkeleton from './GenreSkeleton';
@@ -12,9 +12,13 @@ type Props = {
 const GenresList = ({ onGenreClick, selectedGenre }: Props) => {
   const { data: genres, isLoading, error } = useGenres();
 
+  if (error) return null;
+
   return (
     <>
-      {error && null}
+      <Heading fontSize="2xl" marginBottom={3}>
+        Genres
+      </Heading>
       <List>
         {isLoading &&
           skeletons.map((skeleton) => <GenresSkeleton key={skeleton} />)}
@@ -23,6 +27,7 @@ const GenresList = ({ onGenreClick, selectedGenre }: Props) => {
             <HStack>
               <Image
                 boxSize="32px"
+                objectFit={'cover'}
                 borderRadius={8}
                 src={getCroppedImageUrl(genre.image_background)}
               />
