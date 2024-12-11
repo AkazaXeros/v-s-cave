@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import apiClient, { FetchedDataRes } from '../sources/apiClient';
 
-type Platform = {
+export type Platform = {
   id: number;
   name: string;
   slug: string;
