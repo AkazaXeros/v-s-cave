@@ -11,6 +11,7 @@ export type Game = {
   id: number;
   name: string;
   slug: string;
+  description_raw: string;
   image: string;
   metacritic: number;
   background_image: string;
