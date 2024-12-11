@@ -2,6 +2,11 @@ import axios from 'axios';
 
 // ? For a more robust and secure solution, we should build a custom backend server that acts as a proxy between the client app and the external API. We can securely store the API key on the backend server, and then our client app communicates with the backend, which takes care of making the API requests on our behalf.
 
+export type FetchedDataRes<T> = {
+  count: number;
+  results: T[];
+};
+
 export default axios.create({
   baseURL: `${import.meta.env.VITE_BASE_URL}`,
   params: {

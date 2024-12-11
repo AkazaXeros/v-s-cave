@@ -10,7 +10,7 @@ type Props = {
 };
 
 const GenresList = ({ onGenreClick, selectedGenre }: Props) => {
-  const { data: genres, isLoading, error } = useGenres();
+  const { data, isLoading, error } = useGenres();
 
   if (error) return null;
 
@@ -22,7 +22,7 @@ const GenresList = ({ onGenreClick, selectedGenre }: Props) => {
       <List>
         {isLoading &&
           skeletons.map((skeleton) => <GenresSkeleton key={skeleton} />)}
-        {genres.map((genre) => (
+        {data?.results.map((genre) => (
           <ListItem key={genre.id} paddingY="5px">
             <HStack>
               <Image
