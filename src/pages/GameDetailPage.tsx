@@ -4,6 +4,7 @@ import { Heading, Spinner } from '@chakra-ui/react';
 import ExpandableText from '../components/UI/ExpandableText';
 import GameAttributes from '../components/Game/GameAttributes';
 import GameTrailer from '../components/Game/GameTrailer';
+import GameScreenshot from '../components/Game/GameScreenshot';
 
 const GameDetailPage = () => {
   const { slug } = useParams();
@@ -23,6 +24,10 @@ const GameDetailPage = () => {
       <GameAttributes game={game} />
 
       <GameTrailer gameId={game.id} />
+
+      <GameScreenshot gameId={game.id} />
+
+      {/* {game.id === 9767 && <Text>hello</Text>} */}
     </>
   );
 };
