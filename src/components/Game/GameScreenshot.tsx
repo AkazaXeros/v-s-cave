@@ -7,14 +7,12 @@ type Props = {
 const GameScreenshot = ({ gameId }: Props) => {
   const { data, isLoading, error } = useScreenshots(gameId);
 
-  console.log(gameId);
-
   if (isLoading) return null;
 
   if (error) throw error;
 
   return data ? (
-    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2}>
+    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={2} marginTop={2}>
       {data.results.map((screenshot) => (
         <Image key={screenshot.id} src={screenshot.image}></Image>
       ))}
