@@ -1,4 +1,6 @@
 import { HStack, Switch, Text, useColorMode } from '@chakra-ui/react';
+import { MdWbSunny } from 'react-icons/md';
+import { LuMoon } from 'react-icons/lu';
 
 const ColorModeSwitch = () => {
   const { toggleColorMode, colorMode } = useColorMode();
@@ -12,8 +14,11 @@ const ColorModeSwitch = () => {
         colorScheme="green"
         isChecked={colorMode === 'dark'}
         onChange={toggleColorMode}
+        hidden={true}
       />
-      <Text whiteSpace="nowrap">{text} Mode</Text>
+      <Text whiteSpace="nowrap" onClick={toggleColorMode}>
+        {text === 'Dark' ? <MdWbSunny /> : <LuMoon />}
+      </Text>
     </HStack>
   );
 };
